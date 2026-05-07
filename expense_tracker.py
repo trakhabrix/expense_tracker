@@ -41,9 +41,9 @@ def expense_menu ():
         choice_menu = int(choice_menu)
         #If-Else (for choice)
         if choice_menu == 1:
-            def add_expense()
+            add_expense()
         elif choice_menu == 2:
-            def view_expense()
+            view_expense()
         elif choice_menu == 3:
             print ('3')
         elif choice_menu == 4:
