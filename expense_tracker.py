@@ -1,28 +1,4 @@
-#Storage
-number_expense = 0
-expense_list = []
-#Create Expense
-def add_expense():
-    global number_expense
-    print("\n=====Add Section=====")
-    item = input("Input the Expense: ")
-    amount = float(input("Input the Amount: "))
-    number_expense += 1
-    #Store
-    expense_data = {"ID": number_expense, 
-                    "ITEM": item,
-                    "AMOUNT": amount}
-    expense_list.append(expense_data)
-    print (f"Expense Added +{number_expense}")
-
-
-#View EXpense
-def view_expense(): 
-    if not expense_list:
-        print("\nNot Yet Record")
-    print ("=====Expense List=====")
-    for expense in expense_list:
-        print(f"{expense['ID']}  {expense['ITEM']}  ₱{expense['AMOUNT']}\n")
+import CRUD
 
 def expense_menu ():
     while True:
@@ -41,13 +17,13 @@ def expense_menu ():
         choice_menu = int(choice_menu)
         #If-Else (for choice)
         if choice_menu == 1:
-            add_expense()
+            CRUD.add_expense()
         elif choice_menu == 2:
-            view_expense()
+            CRUD.view_expense()
         elif choice_menu == 3:
-            print ('3')
+            CRUD.update_expense()
         elif choice_menu == 4:
-            print ('4')
+            CRUD.delete_expense()
         elif choice_menu == 5:
             print ('Exiting...\nThanks for Using!!')
             break
@@ -55,3 +31,4 @@ def expense_menu ():
             print ('Invalid Choice')
 
 expense_menu()
+
